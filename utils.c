@@ -6,7 +6,7 @@
 /*   By: mzutter <mzutter@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 23:52:42 by mzutter           #+#    #+#             */
-/*   Updated: 2025/03/08 01:02:31 by mzutter          ###   ########.fr       */
+/*   Updated: 2025/03/08 02:25:33 by mzutter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,15 +48,15 @@ char	*trim_quotes(char *str)
 	return (trimmed);
 }
 
-char *helper_path(char **cmd, char **envp)
+char	*helper_path(char **cmd, char **envp)
 {
-	char *path;
-	
+	char	*path;
+
 	if (cmd[0][0] == '/')
 		path = cmd[0];
 	else
 		path = ft_pathfinder(cmd[0], envp);
 	if (!path)
-		return(free_paths(cmd), NULL);
-	return(path);
+		return (free_paths(cmd), NULL);
+	return (path);
 }

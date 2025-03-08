@@ -6,7 +6,7 @@
 /*   By: mzutter <mzutter@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 22:47:19 by mzutter           #+#    #+#             */
-/*   Updated: 2025/03/08 01:02:39 by mzutter          ###   ########.fr       */
+/*   Updated: 2025/03/08 02:22:00 by mzutter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ bool	is_quote(char c);
 bool	is_closing_quote(char c, char opening_quote);
 bool	handle_quotes(char c, bool *in_quotes, char *opening_quote);
 char	*trim_quotes(char *str);
-char *helper_path(char **cmd, char **envp);
+char	*helper_path(char **cmd, char **envp);
 
 #endif

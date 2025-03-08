@@ -6,7 +6,7 @@
 /*   By: mzutter <mzutter@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 21:24:48 by mzutter           #+#    #+#             */
-/*   Updated: 2025/02/26 22:20:46 by mzutter          ###   ########.fr       */
+/*   Updated: 2025/03/08 02:23:58 by mzutter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,8 @@ static size_t	ft_nb_words(char const *s, char c)
 	return (nb_words);
 }
 
-static void ft_get_next_word(char **next_word, size_t *next_word_len, char c) {
+static void	ft_get_next_word(char **next_word, size_t *next_word_len, char c)
+{
 	size_t	i;
 	bool	in_quotes;
 	char	opening_quote;
@@ -71,18 +72,18 @@ static void ft_get_next_word(char **next_word, size_t *next_word_len, char c) {
 	*next_word += *next_word_len;
 	*next_word_len = 0;
 	i = 0;
- 	in_quotes = false;
- 	opening_quote = '\0';
+	in_quotes = false;
+	opening_quote = '\0';
 	while (**next_word == c && !in_quotes)
 		(*next_word)++;
-	while ((*next_word)[i]) 
+	while ((*next_word)[i])
 	{
 		handle_quotes((*next_word)[i], &in_quotes, &opening_quote);
 		if ((*next_word)[i] == c && !in_quotes)
-			return;
+			return ;
 		(*next_word_len)++;
 		i++;
-    }
+	}
 }
 
 char	**ft_split2(char const *s, char c)
